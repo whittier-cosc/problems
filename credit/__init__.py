@@ -13,58 +13,43 @@ def compiles():
 
 @check50.check(compiles)
 def test1():
-    """identifies 378282246310005 as AMEX"""
-    check50.run("./credit").stdin("378282246310005").stdout("AMEX\n").stdout(check50.EOF).exit(0)
+    """identifies 31406215 as VALID"""
+    check50.run("./credit").stdin("31406215").stdout("VALID\n").stdout(check50.EOF).exit(0)
 
 @check50.check(compiles)
 def test2():
-    """identifies 371449635398431 as AMEX"""
-    check50.run("./credit").stdin("371449635398431").stdout("AMEX\n").stdout(check50.EOF).exit(0)
+    """identifies 00000000 as VALID"""
+    check50.run("./credit").stdin("00000000").stdout("VALID\n").stdout(check50.EOF).exit(0)
 
 @check50.check(compiles)
 def test3():
-    """identifies 5555555555554444 as MASTERCARD"""
-    check50.run("./credit").stdin("5555555555554444").stdout("MASTERCARD\n").stdout(check50.EOF).exit(0)
+    """identifies 12345678 as INVALID"""
+    check50.run("./credit").stdin("12345678").stdout("INVALID\n").stdout(check50.EOF).exit(0)
 
 @check50.check(compiles)
 def test4():
-    """identifies 5105105105105100 as MASTERCARD"""
-    check50.run("./credit").stdin("5105105105105100").stdout("MASTERCARD\n").stdout(check50.EOF).exit(0)
+    """identifies 12341234 as INVALID"""
+    check50.run("./credit").stdin("12341234").stdout("INVALID\n").stdout(check50.EOF).exit(0)
 
 @check50.check(compiles)
 def test5():
-    """identifies 4111111111111111 as VISA"""
-    check50.run("./credit").stdin("4111111111111111").stdout("VISA\n").stdout(check50.EOF).exit(0)
+    """identifies 12341214 as VALID"""
+    check50.run("./credit").stdin("12341214").stdout("VALID\n").stdout(check50.EOF).exit(0)
 
 @check50.check(compiles)
 def test6():
-    """identifies 4012888888881881 as VISA"""
-    check50.run("./credit").stdin("4012888888881881").stdout("VISA\n").stdout(check50.EOF).exit(0)
+    """identifies 56785678 as VALID"""
+    check50.run("./credit").stdin("56785678").stdout("VALID\n").stdout(check50.EOF).exit(0)
 
 @check50.check(compiles)
 def test7():
-    """identifies 1234567890 as INVALID"""
-    check50.run("./credit").stdin("1234567890").stdout("INVALID\n").stdout(check50.EOF).exit(0)
+    """identifies 51785678 as VALID"""
+    check50.run("./credit").stdin("51785678").stdout("VALID\n").stdout(check50.EOF).exit(0)
 
 @check50.check(compiles)
 def test8():
-    """identifies 369421438430814 as INVALID"""
-    check50.run("./credit").stdin("369421438430814").stdout("INVALID\n").stdout(check50.EOF).exit(0)
-
-@check50.check(compiles)
-def test9():
-    """identifies 4062901840 as INVALID"""
-    check50.run("./credit").stdin("4062901840").stdout("INVALID\n").stdout(check50.EOF).exit(0)
-
-@check50.check(compiles)
-def test10():
-    """identifies 5673598276138003 as INVALID"""
-    check50.run("./credit").stdin("5673598276138003").stdout("INVALID\n").stdout(check50.EOF).exit(0)
-
-@check50.check(compiles)
-def test11():
-    """identifies 4111111111111113 as INVALID"""
-    check50.run("./credit").stdin("4111111111111113").stdout("INVALID\n").stdout(check50.EOF).exit(0)
+    """identifies 53785678 as INVALID"""
+    check50.run("./credit").stdin("53785678").stdout("INVALID\n").stdout(check50.EOF).exit(0)
 
 @check50.check(compiles)
 def test_reject_foo():
