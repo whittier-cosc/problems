@@ -10,7 +10,7 @@ import check50
 def valid():
     """project exists and is valid Scratch program"""
 
-    # Make sure there is only one .sb2 file.
+    # Make sure there is only one .sb3 file.
     filenames = [filename for filename in os.listdir() if filename.endswith(".sb3")]
 
     if len(filenames) > 1:
@@ -20,7 +20,7 @@ def valid():
 
     filename = filenames[0]
 
-    # Ensure that unzipped .sb2 file contains .json file.
+    # Ensure that unzipped .sb3 file contains .json file.
     if check50.run(f"unzip {shlex.quote(filename)}").exit():
         raise check50.Failure("invalid .sb3 file")
     check50.exists("project.json")
@@ -39,15 +39,15 @@ def two_sprites(project):
     if num_sprites < 2:
         raise check50.Failure(f"only {num_sprites} sprite{'' if num_sprites == 1 else 's'} found, 2 required")
 
-@check50.check(valid)
-def non_cat(project):
-    """project contains a non-cat sprite"""
-
-    cat_sprite_ids = {"fc0687f38ae230b8765eebf4100e2653",
-                      "06c57b43f5a7d3500fd149de265c2289"}
-
-    if all(target["isStage"] or {costume["assetId"] for costume in target["costumes"]} == cat_sprite_ids for target in project):
-        raise check50.Failure("no non-cat sprite found")
+#@check50.check(valid)
+#def non_cat(project):
+#    """project contains a non-cat sprite"""
+#
+#    cat_sprite_ids = {"fc0687f38ae230b8765eebf4100e2653",
+#                      "06c57b43f5a7d3500fd149de265c2289"}
+#
+#    if all(target["isStage"] or {costume["assetId"] for costume in target["costumes"]} == cat_sprite_ids for target in project):
+#        raise check50.Failure("no non-cat sprite found")
 
 @check50.check(valid)
 def three_blocks(project):
