@@ -14,9 +14,9 @@ def syntax_ok():
 @check50.check(syntax_ok)
 def ScamperElmwood():
     """Scamper Elmwood"""
-    check50.run("python3 alterego.py").stdout("first pet.", regex=True).stdout("** ", regex=False).stdin("Scamper", prompt=False).stdout("street you lived on.", regex=True).stdout("** ", regex=False).stdin("Elmwood", prompt=False).stdout("Thank you.").stdout("alter ego is Scamper Elmwood").exit()
+    check50.run("python3 alterego.py").stdout("first pet.", regex=True).stdout("** ", regex=False).stdin("Scamper", prompt=False).stdout("street you lived on.", regex=True).stdout("** ", regex=False).stdin("Elmwood", prompt=False).stdout("Thank you.\n").stdout("alter ego is ").stdout("Scamper Elmwood").exit()
 
 @check50.check(syntax_ok)
 def ZiggyDingman():
     """Ziggy Dingman"""
-    check50.run("python3 alterego.py").stdout("first pet.", regex=True).stdout("** ", regex=False).stdin("Ziggy", prompt=False).stdout("street you lived on.", regex=True).stdout("** ", regex=False).stdin("Dingman", prompt=False).stdout("Thank you.").stdout("alter ego is Ziggy Dingman").exit()
+    check50.run("python3 alterego.py").stdout("first pet.", regex=True).stdout("** ", regex=False).stdin("Ziggy", prompt=False).stdout("street you lived on.", regex=True).stdout("** ", regex=False).stdin("Dingman", prompt=False).stdout("Thank you.\n").stdout("alter ego is ").stdout("Ziggy Dingman").exit()
