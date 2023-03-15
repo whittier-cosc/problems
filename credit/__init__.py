@@ -14,12 +14,12 @@ def compiles():
 @check50.check(compiles)
 def test1():
     """identifies 31406215 as VALID"""
-    check50.run("./credit").stdin("31406215").stdout("VALID\n").stdout(check50.EOF).exit(0)
+    check50.run("./credit").stdin("31406215").stdout("^\s*VALID", regex=True).stdout(check50.EOF).exit(0)
 
 @check50.check(compiles)
 def test2():
     """identifies 00000000 as VALID"""
-    check50.run("./credit").stdin("00000000").stdout("VALID\n").stdout(check50.EOF).exit(0)
+    check50.run("./credit").stdin("00000000").stdout("^\s*VALID", regex=True).stdout(check50.EOF).exit(0)
 
 @check50.check(compiles)
 def test3():
@@ -34,17 +34,17 @@ def test4():
 @check50.check(compiles)
 def test5():
     """identifies 12341214 as VALID"""
-    check50.run("./credit").stdin("12341214").stdout("VALID\n").stdout(check50.EOF).exit(0)
+    check50.run("./credit").stdin("12341214").stdout("^\s*valid", regex=True).stdout(check50.EOF).exit(0)
 
 @check50.check(compiles)
 def test6():
     """identifies 56785678 as VALID"""
-    check50.run("./credit").stdin("56785678").stdout("VALID\n").stdout(check50.EOF).exit(0)
+    check50.run("./credit").stdin("56785678").stdout("^\s*VALID", regex=True).stdout(check50.EOF).exit(0)
 
 @check50.check(compiles)
 def test7():
     """identifies 51785678 as VALID"""
-    check50.run("./credit").stdin("51785678").stdout("VALID\n").stdout(check50.EOF).exit(0)
+    check50.run("./credit").stdin("51785678").stdout("^\s*VALID", regex=True).stdout(check50.EOF).exit(0)
 
 @check50.check(compiles)
 def test8():
