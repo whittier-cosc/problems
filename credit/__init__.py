@@ -34,7 +34,7 @@ def test4():
 @check50.check(compiles)
 def test5():
     """identifies 12341214 as VALID"""
-    check50.run("./credit").stdin("12341214").stdout("^\s*valid\s*\n", regex=True).stdout(check50.EOF).exit(0)
+    check50.run("./credit").stdin("12341214").stdout("^\s*VALID\s*\n", regex=True).stdout(check50.EOF).exit(0)
 
 @check50.check(compiles)
 def test6():
