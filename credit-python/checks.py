@@ -14,12 +14,12 @@ def syntax_ok(exists):
 @check50.check(syntax_ok)
 def test1():
     """identifies 31406215 as VALID"""
-    check50.run("python3 credit.py").stdin("31406215", prompt=True).stdout("VALID\n").stdout(check50.EOF).exit(0)
+    check50.run("python3 credit.py").stdin("31406215", prompt=True).stdout("^\s*VALID\s*\n", regex=True).stdout(check50.EOF).exit(0)
 
 @check50.check(syntax_ok)
 def test2():
     """identifies 00000000 as VALID"""
-    check50.run("python3 credit.py").stdin("00000000", prompt=True).stdout("VALID\n").stdout(check50.EOF).exit(0)
+    check50.run("python3 credit.py").stdin("00000000", prompt=True).stdout("^\s*VALID\s*\n", regex=True).stdout(check50.EOF).exit(0)
 
 @check50.check(syntax_ok)
 def test3():
@@ -34,17 +34,17 @@ def test4():
 @check50.check(syntax_ok)
 def test5():
     """identifies 12341214 as VALID"""
-    check50.run("python3 credit.py").stdin("12341214", prompt=True).stdout("VALID\n").stdout(check50.EOF).exit(0)
+    check50.run("python3 credit.py").stdin("12341214", prompt=True).stdout("^\s*VALID\s*\n", regex=True).stdout(check50.EOF).exit(0)
 
 @check50.check(syntax_ok)
 def test6():
     """identifies 56785678 as VALID"""
-    check50.run("python3 credit.py").stdin("56785678", prompt=True).stdout("VALID\n").stdout(check50.EOF).exit(0)
+    check50.run("python3 credit.py").stdin("56785678", prompt=True).stdout("^\s*VALID\s*\n", regex=True).stdout(check50.EOF).exit(0)
 
 @check50.check(syntax_ok)
 def test7():
     """identifies 51785678 as VALID"""
-    check50.run("python3 credit.py").stdin("51785678", prompt=True).stdout("VALID\n").stdout(check50.EOF).exit(0)
+    check50.run("python3 credit.py").stdin("51785678", prompt=True).stdout("^\s*VALID\s*\n", regex=True).stdout(check50.EOF).exit(0)
 
 @check50.check(syntax_ok)
 def test8():
