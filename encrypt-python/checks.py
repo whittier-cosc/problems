@@ -14,7 +14,7 @@ def syntax_ok(exists):
 @check50.check(syntax_ok)
 def encrypts_a_as_b():
     """encrypts "a" as "b" using 1 as key"""
-    check50.run("python3 encrypt.py 1").stdin("a").stdout(r"ciphertext:\s*b\n", "ciphertext: b\n").exit(0)
+    check50.run("python3 encrypt.py 1").stdin("a").stdout(r"ciphertext:\s*b\n").exit(0)
 
 @check50.check(syntax_ok)
 def encrypts_barfoo_as_yxocll():
