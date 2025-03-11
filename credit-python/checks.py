@@ -24,12 +24,12 @@ def test2():
 @check50.check(syntax_ok)
 def test3():
     """identifies 12345678 as INVALID"""
-    check50.run("python3 credit.py").stdin("12345678", prompt=True).stdout("INVALID").stdout(check50.EOF).exit(0)
+    check50.run("python3 credit.py").stdin("12345678", prompt=True).stdout("INVALID\n").stdout(check50.EOF).exit(0)
 
 @check50.check(syntax_ok)
 def test4():
     """identifies 12341234 as INVALID"""
-    check50.run("python3 credit.py").stdin("12341234", prompt=True).stdout("INVALID").stdout(check50.EOF).exit(0)
+    check50.run("python3 credit.py").stdin("12341234", prompt=True).stdout("INVALID\n").stdout(check50.EOF).exit(0)
 
 @check50.check(syntax_ok)
 def test5():
@@ -49,5 +49,5 @@ def test7():
 @check50.check(syntax_ok)
 def test8():
     """identifies 53785678 as INVALID"""
-    check50.run("python3 credit.py").stdin("53785678", prompt=True).stdout("INVALID").stdout(check50.EOF).exit(0)
+    check50.run("python3 credit.py").stdin("53785678", prompt=True).stdout("INVALID\n").stdout(check50.EOF).exit(0)
 
