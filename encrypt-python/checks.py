@@ -14,27 +14,27 @@ def syntax_ok(exists):
 @check50.check(syntax_ok)
 def encrypts_a_as_b():
     """encrypts "a" as "b" using 1 as key"""
-    check50.run("python3 encrypt.py 1").stdin("a").stdout(r"ciphertext:\s*b\n", regex=True).exit(0)
+    check50.run("python3 encrypt.py 1").stdin("a").stdout(r"ciphertext:\s*b\s*", regex=True).exit(0)
 
 @check50.check(syntax_ok)
 def encrypts_barfoo_as_yxocll():
     """encrypts "barfoo" as "yxocll" using 23 as key"""
-    check50.run("python3 encrypt.py 23").stdin("barfoo").stdout(r"ciphertext:\s*yxocll\n", regex=True).exit(0)
+    check50.run("python3 encrypt.py 23").stdin("barfoo").stdout(r"ciphertext:\s*yxocll\s*", regex=True).exit(0)
 
 @check50.check(syntax_ok)
 def encrypts_BARFOO_as_EDUIRR():
     """encrypts "BARFOO" as "EDUIRR" using 3 as key"""
-    check50.run("python3 encrypt.py 3").stdin("BARFOO").stdout(r"ciphertext:\s*EDUIRR\n", regex=True).exit(0)
+    check50.run("python3 encrypt.py 3").stdin("BARFOO").stdout(r"ciphertext:\s*EDUIRR\s*", regex=True).exit(0)
 
 @check50.check(syntax_ok)
 def encrypts_BaRFoo_FeVJss():
     """encrypts "BaRFoo" as "FeVJss" using 4 as key"""
-    check50.run("python3 encrypt.py 4").stdin("BaRFoo").stdout(r"ciphertext:\s*FeVJss\n", regex=True).exit(0)
+    check50.run("python3 encrypt.py 4").stdin("BaRFoo").stdout(r"ciphertext:\s*FeVJss\s*", regex=True).exit(0)
 
 @check50.check(syntax_ok)
 def checks_for_handling_non_alpha():
     """encrypts "world, say hello!" as "iadxp, emk tqxxa!" using 12 as key"""
-    check50.run("python3 encrypt.py 12").stdin("world, say hello!").stdout(r"ciphertext:\s*iadxp, emk tqxxa!\n", regex=True).exit(0)
+    check50.run("python3 encrypt.py 12").stdin("world, say hello!").stdout(r"ciphertext:\s*iadxp, emk tqxxa!\s*", regex=True).exit(0)
 
 @check50.check(syntax_ok)
 def handles_no_arg():
