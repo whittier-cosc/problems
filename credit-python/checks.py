@@ -14,7 +14,7 @@ def syntax_ok(exists):
 @check50.check(syntax_ok)
 def test1():
     """identifies 31406215 as VALID"""
-    check50.run("python3 credit.py").stdin("31406215", prompt=True).stdout(r"^\s*VALID\s*", regex=True).stdout(check50.EOF).exit(0)
+    check50.run("python3 credit.py").stdin("31406215", prompt=True).stdout(r"^\s*VALID\s*\n", regex=True).stdout(check50.EOF).exit(0)
 
 @check50.check(syntax_ok)
 def test2():
